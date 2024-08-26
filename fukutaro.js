@@ -50,6 +50,7 @@ class Fukutaro {
 		const lines = [];
 		const script = textarea.value.split('\n');
 		script.forEach((line, index) => {
+			line = line.trim();
 			if (line.trim().startsWith(';') || line.trim() === '') {
 				// console.log(`Skipping line ${index}: ${line}`);
 				return;
