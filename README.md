@@ -61,7 +61,7 @@ By utilizing these elements, Fukutaro enhances the accessibility of video conten
 
 ## Sample
 
-- [Fukutaro - test page](https://a11yc.com/fukutarojs/): Japanese Only
+- [Fukutaro - test page](https://a11yc.com/fukutarojs/): Japanese audio only
 
 ## Accessibility Compliance
 Fukutaro aims to support WCAG 2.0 - 2.2 compliance by providing features that:
