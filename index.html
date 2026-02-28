@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<title>ふくたろうjsテストページ</title>
+</head>
+<body>
+<h1>ふくたろうjsテストページ</h1>
+
+<ul>
+	<li>テキストエリアの文字列を編集すると、音声解説を変更できます</li>
+	<li>「タイムコード」、「音声解説のために画面を止める秒数」、「読み上げ速度（1がデフォルト、大きくすると早くなる）」、「読み上げ内容」を半角スペースで区切って入力します</li>
+</ul>
+
+<h2>アイデアソン・ハッカソン</h2>
+
+<div id="fukutaro_movie" data-youtube_title="アイデアソン・ハッカソン動画" data-youtube_id="7CJoVc_UeNs"></div>
+
+<details>
+<summary>音声解説テキスト</summary>
+<textarea id="fukutaro_script" style="width: 100%;height: 10em;font-size: 120%;line-height: 1.7;display: block;">
+  0:1 0 1.2 モノクロのシージー動画。歩道を車椅子の主人公が単独で進んでいく。車輪を回す腕が少しおもそう。階段を二人の子供が駆け上がっていくのを止まって眺める。
+  0:22 0 1.4 画面は主人公の部屋
+  0:29 0 1.2 とても大きなタブレット。その画面に車椅子。
+  0:35 0 1.2 そこに何か書き込んでいく。
+  0:39 0 1.2 机に広げられた設計図。3Dプリンタが何かを出力しだす。
+  0:48 0 1.2 出来上がった部品を組み立てて動きを確かめる。
+  0:52 0 1.2 うなずく主人公。
+  0:55 0 1.2 画面は再び階段の下。
+  1:02 0 1.3 車椅子のレバーをぐいと引く主人公。背中からフレームが現れ、ぐるりと主人公を囲む。そこに展開する四つの足。
+  1:14 0 1.2 レバーを操作すると、車椅子が歩き出す。階段を上がり出す。どんどん加速して駆け上がっていく。
+  1:22 0 1.3 眩しい光、てっぺんにたどり着くと、真っ青な海と空。It's our turn.
+</textarea>
+</details>
+
+<h2>ユーメニュー</h2>
+
+<div id="fukutaro_movie2" data-youtube_title="きけるおしながきユーメニュー動画" data-youtube_id="mwLvX87oOG8"></div>
+
+<details>
+<summary>音声解説テキスト</summary>
+<textarea id="fukutaro_script2" style="width: 100%;height: 10em;font-size: 120%;line-height: 1.7;display: block;">
+0:1 0 1.5 飲食店の店内。白い杖の青年
+0:10 1 1.5 店員の手引で着席する
+0:27 2 1.5 印刷されたメニューを読めないが、店員は忙しそうで呼び止められない
+0:33 2 1.5 コンピュータの画面。ブラウザの起動
+0:44 2 1.5 携帯電話を聞きながら入店する白い杖の青年
+0:57 2 1.5 店員の手引で着席する
+1:02 2 1.5 印刷されたメニューを断り携帯電話でメニューを検索する
+1:13 2 1.5 携帯電話でメニューを読み上げられなかった
+1:19 1 1.5 ユーメニューのロゴ
+1:38 1 1.5 www.umenu.jp
+</textarea>
+</details>
+
+<p><a href="https://www.jidaikobo.com">有限会社 時代工房</a></p>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="./fukutaro.js"></script>
+<script>
+	const fukutaro = new Fukutaro('fukutaro_movie', 'fukutaro_script');
+	const fukutaro2 = new Fukutaro('fukutaro_movie2', 'fukutaro_script2');
+	function onYouTubeIframeAPIReady() {
+		fukutaro.onYouTubeIframeAPIReady();
+		fukutaro2.onYouTubeIframeAPIReady();
+	}
+</script>
+
+</body>
+</html>
