@@ -12,7 +12,7 @@
 次を実行します。
 
 ```bash
-./serve.sh
+bash serve.sh
 ```
 
 デフォルトでは、ポート `8000` でローカルサーバーを起動します。
@@ -34,7 +34,7 @@ http://localhost:8000/index.html
 次を実行します。
 
 ```bash
-./stop-serve.sh
+bash stop-serve.sh
 ```
 
 ## 主なファイル
