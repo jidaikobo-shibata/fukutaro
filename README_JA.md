@@ -78,7 +78,7 @@ Fukutaro は、以下のような WCAG 2.0 - 2.2 の達成を支援すること�
 
 - 時間依存メディアに対する解決策を提供
   - [1.2.3 音声解説、又はメディアに対する代替 (収録済) (レベル A)](https://waic.jp/translations/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html)
-  - [1.2.5 音声解説 (収録済) (レベル AA)](https://waic.jp/translations/WCAG22/Understanding/audio-description-prerecorded
+  - [1.2.5 音声解説 (収録済) (レベル AA)](https://waic.jp/translations/WCAG22/Understanding/audio-description-prerecorded)
   - [1.2.7 拡張音声解説 (収録済) (レベル AAA)](https://waic.jp/translations/WCAG22/Understanding/extended-audio-description-prerecorded)
 
 ## License
