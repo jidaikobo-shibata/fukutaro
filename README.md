@@ -13,7 +13,11 @@ Fukutaro is a JavaScript utility designed to synchronize YouTube video playback 
 
 ### Usage
 
-Embed Fukutaro in your web project to provide synchronized audio description for YouTube videos. You can specify any YouTube video by setting the `data-youtube_id` attribute to the desired video ID. Here is a simple example of how to set it up:
+Embed Fukutaro in your web project to provide synchronized audio description for YouTube videos. Set `data-youtube_id` to the target YouTube video ID and `data-youtube_title` to the title used in the audio description toggle label.
+
+For production use, reference a tagged version such as `@v1.0.0` instead of the `main` branch. `fukutaro.js` loads the YouTube IFrame Player API automatically.
+
+Here is a simple example using jsDelivr:
 
 ```html
 <!DOCTYPE html>
@@ -24,18 +28,20 @@ Embed Fukutaro in your web project to provide synchronized audio description for
 </head>
 <body>
     <!-- Ensure you replace 'YOUR_YOUTUBE_VIDEO_ID' with the actual YouTube Video ID -->
-    <div id="fukutaro_movie" data-youtube_id="YOUR_YOUTUBE_VIDEO_ID"></div>
+    <div
+        id="fukutaro_movie"
+        data-youtube_id="YOUR_YOUTUBE_VIDEO_ID"
+        data-youtube_title="Video Title"
+    ></div>
     <textarea id="fukutaro_script" aria-label="Timed Audio Description">
         00:10 5 1.0 This is a test audio description.
         00:20 5 1.0 Another test audio description.
     </textarea>
 
-    <!-- Load YouTube IFrame Player API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <!-- Initialize Fukutaro -->
-    <script src="path/to/fukutaro.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jidaikobo-shibata/fukutaro@v1.0.0/fukutaro.js"></script>
     <script>
         const fukutaro = new Fukutaro('fukutaro_movie', 'fukutaro_script');
+
         function onYouTubeIframeAPIReady() {
             fukutaro.onYouTubeIframeAPIReady();
         }
