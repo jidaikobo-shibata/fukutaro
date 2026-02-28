@@ -1,5 +1,7 @@
 # Fukutaro
 
+[日本語版 README](./README_JA.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Fukutaro is a JavaScript utility designed to synchronize YouTube video playback with timed audio description, enhancing the accessibility of video content for all users, including those with disabilities. It allows developers to implement automated speech synthesis based on scripted cues tied to video timestamps, ensuring that users can access content effectively in line with [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards.
