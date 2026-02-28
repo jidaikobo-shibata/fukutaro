@@ -9,6 +9,8 @@
  */
 
 class Fukutaro {
+    static iframeApiRequested = false;
+
     /**
      * Initializes the Fukutaro class for handling YouTube video audio descriptions.
      * @param {string} playerId - The ID of the YouTube iframe element.
@@ -52,13 +54,27 @@ class Fukutaro {
      * Initializes the YouTube IFrame API and the checkbox for toggling audio descriptions.
      */
     init() {
+        Fukutaro.loadYouTubeIframeApi();
+        document.getElementById(this.scriptId).addEventListener('input', this.updateScript.bind(this));
+        this.appendCheckbox();
+        this.updateScript();  // 初期ロード時にスクリプトを更新
+    }
+
+    /**
+     * Loads the YouTube IFrame API script once per page.
+     */
+    static loadYouTubeIframeApi() {
+        if (Fukutaro.iframeApiRequested) return;
+        if (document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+            Fukutaro.iframeApiRequested = true;
+            return;
+        }
+
         const tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/iframe_api';
         const firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        document.getElementById(this.scriptId).addEventListener('input', this.updateScript.bind(this));
-        this.appendCheckbox();
-        this.updateScript();  // 初期ロード時にスクリプトを更新
+        Fukutaro.iframeApiRequested = true;
     }
 
     /**
@@ -75,7 +91,6 @@ class Fukutaro {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         const span = document.createElement('span');
-        span.id = 'audioLabel';
 
         // Set initial and dynamic label text using data attribute
         const videoTitle = playerContainer.getAttribute('data-youtube_title');
